@@ -13,6 +13,8 @@
 		7BF2A63C1DBAD4370009C103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2A63B1DBAD4370009C103 /* Assets.xcassets */; };
 		7BF2A63F1DBAD4370009C103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2A63D1DBAD4370009C103 /* LaunchScreen.storyboard */; };
 		7BF2A64A1DBAD4380009C103 /* mhxdb_draftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */; };
+		7BF2A6561DBC59850009C103 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2A6551DBC59850009C103 /* CoreData.framework */; };
+		7BF2A6591DBC5B110009C103 /* equipments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		7BF2A6451DBAD4380009C103 /* mhxdb-draftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mhxdb-draftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mhxdb_draftTests.swift; sourceTree = "<group>"; };
 		7BF2A64B1DBAD4380009C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7BF2A6551DBC59850009C103 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = equipments.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF2A6561DBC59850009C103 /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +67,7 @@
 				7BF2A6331DBAD4370009C103 /* mhxdb-draft */,
 				7BF2A6481DBAD4380009C103 /* mhxdb-draftTests */,
 				7BF2A6321DBAD4370009C103 /* Products */,
+				7BF2A6541DBC59850009C103 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +86,7 @@
 				7BF2A6341DBAD4370009C103 /* AppDelegate.swift */,
 				7BF2A6361DBAD4370009C103 /* ViewController.swift */,
 				7BF2A6381DBAD4370009C103 /* Main.storyboard */,
+				7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */,
 				7BF2A63B1DBAD4370009C103 /* Assets.xcassets */,
 				7BF2A63D1DBAD4370009C103 /* LaunchScreen.storyboard */,
 				7BF2A6401DBAD4370009C103 /* Info.plist */,
@@ -94,6 +101,14 @@
 				7BF2A64B1DBAD4380009C103 /* Info.plist */,
 			);
 			path = "mhxdb-draftTests";
+			sourceTree = "<group>";
+		};
+		7BF2A6541DBC59850009C103 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BF2A6551DBC59850009C103 /* CoreData.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7BF2A6371DBAD4370009C103 /* ViewController.swift in Sources */,
+				7BF2A6591DBC5B110009C103 /* equipments.xcdatamodeld in Sources */,
 				7BF2A6351DBAD4370009C103 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +432,19 @@
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */,
+			);
+			currentVersion = 7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */;
+			path = equipments.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7BF2A6291DBAD4370009C103 /* Project object */;
 }
