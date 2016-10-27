@@ -21,6 +21,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // text input
     @IBOutlet weak var textInput: UITextField!
     
+    var databasePath: String = ""
+    
     // MARK: UITextFieldDelegate
     /*
      When a user wants to finish editing the text field, the text field needs to resign its first-responder status. Because the text field will no longer be the active object in the app, events need to get routed to a more appropriate object.
@@ -40,9 +42,28 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     */
     // MARK: action
-    // button
+    // search and show result page
     @IBAction func setResultName(_ sender: UIButton) {
         resultLabel.text = textInput.text
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        databasePath = appDelegate.dbFilePath!
+        let mhxDB = FMDatabase(path: databasePath as String)
+        
+        if (mhxDB?.open())! {
+            let querySQL = "select * from skill where skill_point_name = '匠'"
+            
+            let results:FMResultSet? = mhxDB?.executeQuery(querySQL,
+                                                           withArgumentsIn: nil)
+            
+            if results?.next() == true {
+                let r = Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!)
+                searchResults.append(r)
+            }
+            mhxDB?.close()
+        } else {
+            exit(1)
+        }
+
     }
 
     
@@ -52,6 +73,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // To set ViewController as the delegate for nameText
         // Handle the text field’s user input through delegate callbacks.
         textInput.delegate = self
+        
     }
 
 }

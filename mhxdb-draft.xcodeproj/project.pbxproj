@@ -7,14 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7BCBDAF51DC1B46A000A2D6E /* mhx.db in Resources */ = {isa = PBXBuildFile; fileRef = 7BCBDAF41DC1B46A000A2D6E /* mhx.db */; };
+		7BCBDAFD1DC27110000A2D6E /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */; };
+		7BCBDAFF1DC2916A000A2D6E /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDAFE1DC2916A000A2D6E /* ResultTableViewController.swift */; };
+		7BCBDB011DC292BA000A2D6E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDB001DC292BA000A2D6E /* Result.swift */; };
+		7BCBDB021DC292BA000A2D6E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDB001DC292BA000A2D6E /* Result.swift */; };
+		7BCBDB041DC29EEF000A2D6E /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BCBDB031DC29EEF000A2D6E /* libsqlite3.tbd */; };
 		7BF2A6351DBAD4370009C103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6341DBAD4370009C103 /* AppDelegate.swift */; };
 		7BF2A6371DBAD4370009C103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6361DBAD4370009C103 /* ViewController.swift */; };
 		7BF2A63A1DBAD4370009C103 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2A6381DBAD4370009C103 /* Main.storyboard */; };
 		7BF2A63C1DBAD4370009C103 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2A63B1DBAD4370009C103 /* Assets.xcassets */; };
 		7BF2A63F1DBAD4370009C103 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BF2A63D1DBAD4370009C103 /* LaunchScreen.storyboard */; };
 		7BF2A64A1DBAD4380009C103 /* mhxdb_draftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */; };
-		7BF2A6561DBC59850009C103 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BF2A6551DBC59850009C103 /* CoreData.framework */; };
-		7BF2A6591DBC5B110009C103 /* equipments.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */; };
+		7BF2A6AA1DBFD0150009C103 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6A01DBFD0150009C103 /* FMDatabase.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BF2A6AB1DBFD0150009C103 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6A21DBFD0150009C103 /* FMDatabaseAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BF2A6AC1DBFD0150009C103 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6A41DBFD0150009C103 /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BF2A6AD1DBFD0150009C103 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6A61DBFD0150009C103 /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		7BF2A6AE1DBFD0150009C103 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7BF2A6A91DBFD0150009C103 /* FMResultSet.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +37,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7BCBDAF41DC1B46A000A2D6E /* mhx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = mhx.db; sourceTree = "<group>"; };
+		7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		7BCBDAFE1DC2916A000A2D6E /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
+		7BCBDB001DC292BA000A2D6E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		7BCBDB031DC29EEF000A2D6E /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		7BF2A6311DBAD4370009C103 /* mhxdb-draft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mhxdb-draft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF2A6341DBAD4370009C103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7BF2A6361DBAD4370009C103 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,8 +52,18 @@
 		7BF2A6451DBAD4380009C103 /* mhxdb-draftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mhxdb-draftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mhxdb_draftTests.swift; sourceTree = "<group>"; };
 		7BF2A64B1DBAD4380009C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BF2A6551DBC59850009C103 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = equipments.xcdatamodel; sourceTree = "<group>"; };
+		7BF2A69E1DBFD0150009C103 /* mhxdb-draft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mhxdb-draft-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BF2A69F1DBFD0150009C103 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7BF2A6A01DBFD0150009C103 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		7BF2A6A11DBFD0150009C103 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		7BF2A6A21DBFD0150009C103 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		7BF2A6A31DBFD0150009C103 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		7BF2A6A41DBFD0150009C103 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		7BF2A6A51DBFD0150009C103 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		7BF2A6A61DBFD0150009C103 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		7BF2A6A71DBFD0150009C103 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		7BF2A6A81DBFD0150009C103 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		7BF2A6A91DBFD0150009C103 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,7 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7BF2A6561DBC59850009C103 /* CoreData.framework in Frameworks */,
+				7BCBDB041DC29EEF000A2D6E /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,13 +107,28 @@
 		7BF2A6331DBAD4370009C103 /* mhxdb-draft */ = {
 			isa = PBXGroup;
 			children = (
+				7BCBDAF41DC1B46A000A2D6E /* mhx.db */,
+				7BF2A69F1DBFD0150009C103 /* FMDatabase.h */,
+				7BF2A6A01DBFD0150009C103 /* FMDatabase.m */,
+				7BF2A6A11DBFD0150009C103 /* FMDatabaseAdditions.h */,
+				7BF2A6A21DBFD0150009C103 /* FMDatabaseAdditions.m */,
+				7BF2A6A31DBFD0150009C103 /* FMDatabasePool.h */,
+				7BF2A6A41DBFD0150009C103 /* FMDatabasePool.m */,
+				7BF2A6A51DBFD0150009C103 /* FMDatabaseQueue.h */,
+				7BF2A6A61DBFD0150009C103 /* FMDatabaseQueue.m */,
+				7BF2A6A71DBFD0150009C103 /* FMDB.h */,
+				7BF2A6A81DBFD0150009C103 /* FMResultSet.h */,
+				7BF2A6A91DBFD0150009C103 /* FMResultSet.m */,
 				7BF2A6341DBAD4370009C103 /* AppDelegate.swift */,
 				7BF2A6361DBAD4370009C103 /* ViewController.swift */,
 				7BF2A6381DBAD4370009C103 /* Main.storyboard */,
-				7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */,
+				7BCBDAFE1DC2916A000A2D6E /* ResultTableViewController.swift */,
 				7BF2A63B1DBAD4370009C103 /* Assets.xcassets */,
 				7BF2A63D1DBAD4370009C103 /* LaunchScreen.storyboard */,
 				7BF2A6401DBAD4370009C103 /* Info.plist */,
+				7BF2A69E1DBFD0150009C103 /* mhxdb-draft-Bridging-Header.h */,
+				7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */,
+				7BCBDB001DC292BA000A2D6E /* Result.swift */,
 			);
 			path = "mhxdb-draft";
 			sourceTree = "<group>";
@@ -106,7 +145,7 @@
 		7BF2A6541DBC59850009C103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				7BF2A6551DBC59850009C103 /* CoreData.framework */,
+				7BCBDB031DC29EEF000A2D6E /* libsqlite3.tbd */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -161,6 +200,7 @@
 				TargetAttributes = {
 					7BF2A6301DBAD4370009C103 = {
 						CreatedOnToolsVersion = 8.0;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 					7BF2A6441DBAD4380009C103 = {
@@ -197,6 +237,7 @@
 				7BF2A63F1DBAD4370009C103 /* LaunchScreen.storyboard in Resources */,
 				7BF2A63C1DBAD4370009C103 /* Assets.xcassets in Resources */,
 				7BF2A63A1DBAD4370009C103 /* Main.storyboard in Resources */,
+				7BCBDAF51DC1B46A000A2D6E /* mhx.db in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,9 +255,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BF2A6AA1DBFD0150009C103 /* FMDatabase.m in Sources */,
 				7BF2A6371DBAD4370009C103 /* ViewController.swift in Sources */,
-				7BF2A6591DBC5B110009C103 /* equipments.xcdatamodeld in Sources */,
+				7BCBDAFD1DC27110000A2D6E /* SearchResultTableViewCell.swift in Sources */,
+				7BF2A6AE1DBFD0150009C103 /* FMResultSet.m in Sources */,
+				7BF2A6AC1DBFD0150009C103 /* FMDatabasePool.m in Sources */,
+				7BCBDAFF1DC2916A000A2D6E /* ResultTableViewController.swift in Sources */,
+				7BCBDB011DC292BA000A2D6E /* Result.swift in Sources */,
 				7BF2A6351DBAD4370009C103 /* AppDelegate.swift in Sources */,
+				7BF2A6AB1DBFD0150009C103 /* FMDatabaseAdditions.m in Sources */,
+				7BF2A6AD1DBFD0150009C103 /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BCBDB021DC292BA000A2D6E /* Result.swift in Sources */,
 				7BF2A64A1DBAD4380009C103 /* mhxdb_draftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,10 +404,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mhxdb-draft/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mhxdb-draft",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhxdb-draft";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -367,10 +423,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "mhxdb-draft/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/mhxdb-draft",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhxdb-draft";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -422,6 +484,7 @@
 				7BF2A6501DBAD4380009C103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7BF2A6511DBAD4380009C103 /* Build configuration list for PBXNativeTarget "mhxdb-draftTests" */ = {
 			isa = XCConfigurationList;
@@ -430,21 +493,9 @@
 				7BF2A6531DBAD4380009C103 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		7BF2A6571DBC5B110009C103 /* equipments.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */,
-			);
-			currentVersion = 7BF2A6581DBC5B110009C103 /* equipments.xcdatamodel */;
-			path = equipments.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 7BF2A6291DBAD4370009C103 /* Project object */;
 }
