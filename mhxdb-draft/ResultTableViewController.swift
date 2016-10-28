@@ -29,17 +29,20 @@ class ResultTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         let filemgr = FileManager.default
-        let dirPaths =
+        //let dirPaths =
             NSSearchPathForDirectoriesInDomains(.documentDirectory,
                                                 .userDomainMask, true)
         
-        let docsDir = dirPaths[0] as NSString
+        //let docsDir = dirPaths[0] as NSString
         
-        databasePath = docsDir.appendingPathComponent(
-            "mhx.db") as NSString
-        NSLog("databasePath: \(databasePath)")
-        if filemgr.fileExists(atPath: databasePath as String) {
-            let mhxDB = FMDatabase(path: databasePath as String)
+        //databasePath = docsDir.appendingPathComponent("mhx.db") as NSString
+        
+        let path = Bundle.main.path(forResource: "mhx", ofType:"db")
+        
+        NSLog("path: \(path)")
+        
+        if filemgr.fileExists(atPath: path! as String) {
+            let mhxDB = FMDatabase(path: path! as String)
             
             if mhxDB == nil {
                 NSLog("Error: \(mhxDB?.lastErrorMessage())")
@@ -47,7 +50,7 @@ class ResultTableViewController: UITableViewController {
             
             if (mhxDB?.open())! {
                 // query here
-                let querySQL = "select name from sqlite_master where type='table'"
+                let querySQL = "select * from skill"
                 NSLog("query: \(querySQL)")
                 let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
                 NSLog("FMResultSet.columnCount: \(results?.columnCount())")
