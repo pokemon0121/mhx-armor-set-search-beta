@@ -10,7 +10,7 @@
         <!--Search-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mhxdb_draft" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="mhxdb_draft" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -43,7 +43,6 @@
                                         </constraints>
                                         <state key="normal" title="look it up"/>
                                         <connections>
-                                            <action selector="setResultName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyb-Mf-n8p"/>
                                             <segue destination="nFQ-8z-Ptf" kind="show" id="MVa-lx-htC"/>
                                         </connections>
                                     </button>
@@ -83,7 +82,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="50" id="vfH-wK-BTG" customClass="SearchResultTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="50" id="vfH-wK-BTG" customClass="SearchResultTableViewCell" customModule="mhxdb_draft" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vfH-wK-BTG" id="oW2-3K-cWe">

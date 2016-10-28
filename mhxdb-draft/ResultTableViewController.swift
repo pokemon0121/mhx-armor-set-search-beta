@@ -20,7 +20,7 @@ class ResultTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        NSLog("Entered viewDidLoad method in ResultTableViewController!!!!!!!!")
         loadSampleData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -37,35 +37,41 @@ class ResultTableViewController: UITableViewController {
         
         databasePath = docsDir.appendingPathComponent(
             "mhx.db") as NSString
-        
-        if !filemgr.fileExists(atPath: databasePath as String) {
-            
+        NSLog("databasePath: \(databasePath)")
+        if filemgr.fileExists(atPath: databasePath as String) {
             let mhxDB = FMDatabase(path: databasePath as String)
             
             if mhxDB == nil {
-                print("Error: \(mhxDB?.lastErrorMessage())")
+                NSLog("Error: \(mhxDB?.lastErrorMessage())")
             }
             
             if (mhxDB?.open())! {
                 // query here
-                let querySQL = "select * from skill"
+                let querySQL = "select name from sqlite_master where type='table'"
+                NSLog("query: \(querySQL)")
                 let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
-                if results?.next() == true {
-                    NSLog((results?.string(forColumn: "skill_name"))!)
-                    searchResults.append(Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!))
-                    searchResults.append(Result(name: "skill_point_name", value: (results?.string(forColumn: "skill_point_name"))!))
-                    searchResults.append(Result(name: "point", value: (results?.string(forColumn: "point"))!))
-                    searchResults.append(Result(name: "type", value: (results?.string(forColumn: "type"))!))
+                NSLog("FMResultSet.columnCount: \(results?.columnCount())")
+                if results != nil {
+                    while (results?.next())! {
+                        let s = (results?.string(forColumn: "skill_name"))!
+                        NSLog("one result: \(s)")
+                        searchResults.append(Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!))
+                        searchResults.append(Result(name: "skill_point_name", value: (results?.string(forColumn: "skill_point_name"))!))
+                        searchResults.append(Result(name: "point", value: (results?.string(forColumn: "point"))!))
+                        searchResults.append(Result(name: "type", value: (results?.string(forColumn: "type"))!))
+                    }
                 } else {
-                    print("Error: \(mhxDB?.lastErrorMessage())")
+                    NSLog("NORESULTS: \(mhxDB?.lastErrorMessage())")
                 }
                 mhxDB?.close()
             } else {
-                print("Error: \(mhxDB?.lastErrorMessage())")
+                NSLog("Error: \(mhxDB?.lastErrorMessage())")
             }
             
+        } else {
+            NSLog("database file does not exist!!!")
         }
-    
+        NSLog("size of searchResults: \(searchResults.count)")
     }
     
     func loadSampleData() {
