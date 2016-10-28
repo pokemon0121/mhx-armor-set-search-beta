@@ -44,7 +44,7 @@
                                         <state key="normal" title="look it up"/>
                                         <connections>
                                             <action selector="setResultName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wyb-Mf-n8p"/>
-                                            <segue destination="nFQ-8z-Ptf" kind="show" id="xUO-2D-IO3"/>
+                                            <segue destination="nFQ-8z-Ptf" kind="show" id="MVa-lx-htC"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -83,11 +83,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchResultCell" rowHeight="50" id="vfH-wK-BTG" customClass="SearchResultTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="SearchResultTableViewCell" rowHeight="50" id="vfH-wK-BTG" customClass="SearchResultTableViewCell">
                                 <rect key="frame" x="0.0" y="92" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vfH-wK-BTG" id="oW2-3K-cWe">
-                                    <frame key="frameInset" width="375" height="49"/>
+                                    <frame key="frameInset" width="375" height="49.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slM-Vi-wKR">
@@ -108,7 +108,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="columnNameLabel" destination="slM-Vi-wKR" id="L4R-TK-v4U"/>
-                                    <outlet property="columnNlmeLabel" destination="slM-Vi-wKR" id="cgz-IV-ZaB"/>
                                     <outlet property="columnValueLabel" destination="kpD-Im-NHs" id="z7L-zS-sJN"/>
                                 </connections>
                             </tableViewCell>

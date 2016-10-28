@@ -45,24 +45,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // search and show result page
     @IBAction func setResultName(_ sender: UIButton) {
         resultLabel.text = textInput.text
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        databasePath = appDelegate.dbFilePath!
-        let mhxDB = FMDatabase(path: databasePath as String)
         
-        if (mhxDB?.open())! {
-            let querySQL = "select * from skill where skill_point_name = '匠'"
-            
-            let results:FMResultSet? = mhxDB?.executeQuery(querySQL,
-                                                           withArgumentsIn: nil)
-            
-            if results?.next() == true {
-                let r = Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!)
-                searchResults.append(r)
-            }
-            mhxDB?.close()
-        } else {
-            exit(1)
-        }
 
     }
 

@@ -16,18 +16,64 @@ import UIKit
 
 class ResultTableViewController: UITableViewController {
 
-    
+    var databasePath = NSString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadSampleData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        let filemgr = FileManager.default
+        let dirPaths =
+            NSSearchPathForDirectoriesInDomains(.documentDirectory,
+                                                .userDomainMask, true)
+        
+        let docsDir = dirPaths[0] as NSString
+        
+        databasePath = docsDir.appendingPathComponent(
+            "mhx.db") as NSString
+        
+        if !filemgr.fileExists(atPath: databasePath as String) {
+            
+            let mhxDB = FMDatabase(path: databasePath as String)
+            
+            if mhxDB == nil {
+                print("Error: \(mhxDB?.lastErrorMessage())")
+            }
+            
+            if (mhxDB?.open())! {
+                // query here
+                let querySQL = "select * from skill"
+                let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
+                if results?.next() == true {
+                    NSLog((results?.string(forColumn: "skill_name"))!)
+                    searchResults.append(Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!))
+                    searchResults.append(Result(name: "skill_point_name", value: (results?.string(forColumn: "skill_point_name"))!))
+                    searchResults.append(Result(name: "point", value: (results?.string(forColumn: "point"))!))
+                    searchResults.append(Result(name: "type", value: (results?.string(forColumn: "type"))!))
+                } else {
+                    print("Error: \(mhxDB?.lastErrorMessage())")
+                }
+                mhxDB?.close()
+            } else {
+                print("Error: \(mhxDB?.lastErrorMessage())")
+            }
+            
+        }
+    
     }
-
+    
+    func loadSampleData() {
+        searchResults.append(Result(name: "name1", value: "value1"))
+        searchResults.append(Result(name: "name1", value: "value1"))
+        searchResults.append(Result(name: "name1", value: "value1"))
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

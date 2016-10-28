@@ -13,13 +13,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-    var dbFilePath: String?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if self.initializeDb() {
-            NSLog("Successful db copy")
-        }
         return true
     }
 
@@ -45,40 +41,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-    
-    // MARK: - FMDB
-    
-    let DATABASE_RESOURCE_NAME = "mhx"
-    let DATABASE_RESOURCE_TYPE = "sqlite"
-    let DATABASE_FILE_NAME = "mhx.db"
-    
-    func initializeDb() -> Bool {
-        let documentFolderPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as String
-        
-        let dbfile = "/" + DATABASE_FILE_NAME;
-        
-        self.dbFilePath = documentFolderPath + dbfile
-        
-        let filemanager = FileManager.default
-        if (!filemanager.fileExists(atPath: dbFilePath! as String) ) {
-            
-            let backupDbPath = Bundle.main.path(forResource: DATABASE_RESOURCE_NAME, ofType: DATABASE_RESOURCE_TYPE)
-            
-            if (backupDbPath == nil) {
-                return false
-            } else {
-                do {
-                    try filemanager.copyItem(atPath: backupDbPath!, toPath:dbFilePath!)
-                }
-                catch let error as NSError {
-                    print("Something went wrong: \(error)")
-                }
-            }
-            
-        }
-        return true
-    
-    }
 
 }
 
