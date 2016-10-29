@@ -13,9 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var mhxDB: FMDatabase?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        openDatabase()
         return true
     }
 
@@ -39,8 +41,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        closeDatabse()
     }
 
+    func openDatabase() {        
+        // code for open database connection
+        let filemgr = FileManager.default
+        let path = Bundle.main.path(forResource: "mhx", ofType:"db")
+        NSLog("Database file path: \(path)")
+        if filemgr.fileExists(atPath: path! as String) {
+            
+            mhxDB = FMDatabase(path: path! as String)
+            
+            if mhxDB == nil {
+                NSLog("Cannot connect to database file error: \(mhxDB?.lastErrorMessage())")
+                exit(1)
+            }
+            
+            if (mhxDB?.open())! {
+                NSLog("Database opened.")
+            } else {
+                NSLog("Cannot opoen database error: \(mhxDB?.lastErrorMessage())")
+                exit(1)
+            }
+            
+        } else {
+            NSLog("Database file does not exist!!!")
+            exit(1)
+        }
+
+    }
     
+    func closeDatabse() {
+        mhxDB?.close()
+    }
 }
 

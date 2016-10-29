@@ -43,7 +43,7 @@
                                         </constraints>
                                         <state key="normal" title="look it up"/>
                                         <connections>
-                                            <segue destination="nFQ-8z-Ptf" kind="show" id="MVa-lx-htC"/>
+                                            <segue destination="nFQ-8z-Ptf" kind="show" identifier="LookItUp" id="MVa-lx-htC"/>
                                         </connections>
                                     </button>
                                 </subviews>

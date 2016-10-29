@@ -21,8 +21,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     // text input
     @IBOutlet weak var textInput: UITextField!
     
-    var databasePath: String = ""
-    
     // MARK: UITextFieldDelegate
     /*
      When a user wants to finish editing the text field, the text field needs to resign its first-responder status. Because the text field will no longer be the active object in the app, events need to get routed to a more appropriate object.
@@ -43,10 +41,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     */
     // MARK: action
     // search and show result page
-    @IBAction func setResultName(_ sender: UIButton) {
-        resultLabel.text = textInput.text
-        
-
+    @IBAction func performSearch(_ sender: UIButton) {
+        performSegue(withIdentifier: "LookItUp", sender: sender)
     }
 
     
@@ -57,6 +53,17 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // Handle the text field’s user input through delegate callbacks.
         textInput.delegate = self
         
+    }
+    
+    // send the user input to next view controller
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "LookItUp" {
+            NSLog("Identifier = LookItUp, segue is ready, textInput: " + textInput.text!)
+            if let destination = segue.destination as? ResultTableViewController {
+                destination.searchContentViaSegue = textInput.text!
+            }
+        }
+        NSLog("Identifier not set up correctly. textInput: " + textInput.text!)
     }
 
 }

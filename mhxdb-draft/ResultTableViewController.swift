@@ -18,69 +18,57 @@ class ResultTableViewController: UITableViewController {
 
     var databasePath = NSString()
     
+    var searchContentViaSegue = String()
+    
     override func viewDidLoad() {
+        searchResults.removeAll()
         super.viewDidLoad()
         NSLog("Entered viewDidLoad method in ResultTableViewController!!!!!!!!")
-        loadSampleData()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let filemgr = FileManager.default
-        //let dirPaths =
-            NSSearchPathForDirectoriesInDomains(.documentDirectory,
-                                                .userDomainMask, true)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mhxDB = appDelegate.mhxDB
         
-        //let docsDir = dirPaths[0] as NSString
-        
-        //databasePath = docsDir.appendingPathComponent("mhx.db") as NSString
-        
-        let path = Bundle.main.path(forResource: "mhx", ofType:"db")
-        
-        NSLog("path: \(path)")
-        
-        if filemgr.fileExists(atPath: path! as String) {
-            let mhxDB = FMDatabase(path: path! as String)
-            
-            if mhxDB == nil {
-                NSLog("Error: \(mhxDB?.lastErrorMessage())")
+        // query here
+        let querySQL = "select distinct skill_name from skill where skill_point_name = '" + searchContentViaSegue + "'"
+        NSLog("Query: \(querySQL)")
+        NSLog("searchContentViaSegue: \(searchContentViaSegue)")
+        let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
+        NSLog("FMResultSet.columnCount: \(results?.columnCount())")
+        if results != nil {
+            while (results?.next())! {
+                searchResults.append(Result(name: "スキル", value: (results?.string(forColumn: "skill_name"))!))
+                /*
+                searchResults.append(Result(name: "スキル", value: (results?.string(forColumn: "skill_name"))!))
+                searchResults.append(Result(name: "スキル系統", value: (results?.string(forColumn: "skill_point_name"))!))
+                searchResults.append(Result(name: "ポイント", value: (results?.string(forColumn: "point"))!))
+                searchResults.append(Result(name: "タイプ", value: getType(type: (results?.string(forColumn: "type"))!)))
+                */
             }
-            
-            if (mhxDB?.open())! {
-                // query here
-                let querySQL = "select * from skill"
-                NSLog("query: \(querySQL)")
-                let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
-                NSLog("FMResultSet.columnCount: \(results?.columnCount())")
-                if results != nil {
-                    while (results?.next())! {
-                        let s = (results?.string(forColumn: "skill_name"))!
-                        NSLog("one result: \(s)")
-                        searchResults.append(Result(name: "skill_name", value: (results?.string(forColumn: "skill_name"))!))
-                        searchResults.append(Result(name: "skill_point_name", value: (results?.string(forColumn: "skill_point_name"))!))
-                        searchResults.append(Result(name: "point", value: (results?.string(forColumn: "point"))!))
-                        searchResults.append(Result(name: "type", value: (results?.string(forColumn: "type"))!))
-                    }
-                } else {
-                    NSLog("NORESULTS: \(mhxDB?.lastErrorMessage())")
-                }
-                mhxDB?.close()
-            } else {
-                NSLog("Error: \(mhxDB?.lastErrorMessage())")
-            }
-            
         } else {
-            NSLog("database file does not exist!!!")
+            NSLog("NORESULTS: \(mhxDB?.lastErrorMessage())")
         }
         NSLog("size of searchResults: \(searchResults.count)")
     }
-    
-    func loadSampleData() {
-        searchResults.append(Result(name: "name1", value: "value1"))
-        searchResults.append(Result(name: "name1", value: "value1"))
-        searchResults.append(Result(name: "name1", value: "value1"))
+
+    func getType(type: String) -> String {
+        if type == "0" {
+            return "両方";
+        }
+        else if type == "1" {
+            return "剣士"
+        }
+        else if type == "2" {
+            return "ガンナー"
+        }
+        else {
+            return "Unknown"
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -114,6 +102,15 @@ class ResultTableViewController: UITableViewController {
         return cell
     }
     
+    // section title
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String{
+        if (section == 0){
+            return "Searched for " + searchContentViaSegue
+        }
+        else {
+            return "Unknown section"
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
