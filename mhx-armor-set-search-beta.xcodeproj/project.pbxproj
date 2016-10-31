@@ -90,8 +90,8 @@
 		7BF2A6281DBAD4370009C103 = {
 			isa = PBXGroup;
 			children = (
-				7BF2A6331DBAD4370009C103 /* mhxdb-draft */,
-				7BF2A6481DBAD4380009C103 /* mhxdb-draftTests */,
+				7BF2A6331DBAD4370009C103 /* mhx-armor-set-search-beta */,
+				7BF2A6481DBAD4380009C103 /* mhx-armor-set-search-betaTests */,
 				7BF2A6321DBAD4370009C103 /* Products */,
 				7BF2A6541DBC59850009C103 /* Frameworks */,
 			);
@@ -106,7 +106,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7BF2A6331DBAD4370009C103 /* mhxdb-draft */ = {
+		7BF2A6331DBAD4370009C103 /* mhx-armor-set-search-beta */ = {
 			isa = PBXGroup;
 			children = (
 				7BCBDAF41DC1B46A000A2D6E /* mhx.db */,
@@ -133,16 +133,16 @@
 				7BCBDB001DC292BA000A2D6E /* Result.swift */,
 				7B3B45E21DC7158B001330DF /* SkillPickerView.swift */,
 			);
-			path = "mhxdb-draft";
+			path = "mhx-armor-set-search-beta";
 			sourceTree = "<group>";
 		};
-		7BF2A6481DBAD4380009C103 /* mhxdb-draftTests */ = {
+		7BF2A6481DBAD4380009C103 /* mhx-armor-set-search-betaTests */ = {
 			isa = PBXGroup;
 			children = (
 				7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */,
 				7BF2A64B1DBAD4380009C103 /* Info.plist */,
 			);
-			path = "mhxdb-draftTests";
+			path = "mhx-armor-set-search-betaTests";
 			sourceTree = "<group>";
 		};
 		7BF2A6541DBC59850009C103 /* Frameworks */ = {
@@ -409,13 +409,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "mhxdb-draft/Info.plist";
+				INFOPLIST_FILE = "mhx-armor-set-search-beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mhxdb-draft",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhxdb-draft";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhx-armor-set-search-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -428,13 +428,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				INFOPLIST_FILE = "mhxdb-draft/Info.plist";
+				INFOPLIST_FILE = "mhx-armor-set-search-beta/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/mhxdb-draft",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhxdb-draft";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhx-armor-set-search-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
