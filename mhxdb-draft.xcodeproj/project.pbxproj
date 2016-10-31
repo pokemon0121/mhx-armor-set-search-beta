@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B3B45E31DC7158B001330DF /* SkillPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B3B45E21DC7158B001330DF /* SkillPickerView.swift */; };
 		7BCBDAF51DC1B46A000A2D6E /* mhx.db in Resources */ = {isa = PBXBuildFile; fileRef = 7BCBDAF41DC1B46A000A2D6E /* mhx.db */; };
 		7BCBDAFD1DC27110000A2D6E /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */; };
 		7BCBDAFF1DC2916A000A2D6E /* ResultTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BCBDAFE1DC2916A000A2D6E /* ResultTableViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B3B45E21DC7158B001330DF /* SkillPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkillPickerView.swift; sourceTree = "<group>"; };
 		7BCBDAF41DC1B46A000A2D6E /* mhx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = mhx.db; sourceTree = "<group>"; };
 		7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		7BCBDAFE1DC2916A000A2D6E /* ResultTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				7BF2A69E1DBFD0150009C103 /* mhxdb-draft-Bridging-Header.h */,
 				7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */,
 				7BCBDB001DC292BA000A2D6E /* Result.swift */,
+				7B3B45E21DC7158B001330DF /* SkillPickerView.swift */,
 			);
 			path = "mhxdb-draft";
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 				7BF2A6371DBAD4370009C103 /* ViewController.swift in Sources */,
 				7BCBDAFD1DC27110000A2D6E /* SearchResultTableViewCell.swift in Sources */,
 				7BF2A6AE1DBFD0150009C103 /* FMResultSet.m in Sources */,
+				7B3B45E31DC7158B001330DF /* SkillPickerView.swift in Sources */,
 				7BF2A6AC1DBFD0150009C103 /* FMDatabasePool.m in Sources */,
 				7BCBDAFF1DC2916A000A2D6E /* ResultTableViewController.swift in Sources */,
 				7BCBDB011DC292BA000A2D6E /* Result.swift in Sources */,
