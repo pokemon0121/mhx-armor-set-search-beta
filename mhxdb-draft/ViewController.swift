@@ -16,18 +16,35 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
 
     // MARK: properties
-    // text above the input field
-    @IBOutlet weak var nameText: UILabel!
-    // result display label
-    @IBOutlet weak var resultLabel: UILabel!
+
     // text input
     @IBOutlet weak var textInput: UITextField!
-    // the picker view
-    var skillPicker = SkillPickerView()
-    // input text field
-    @IBOutlet weak var pickerTextField: UITextField!
+    
+    // the picker views for text fields
+    var pickerView1 = UIPickerView()
+    var pickerView2 = UIPickerView()
+    var pickerView3 = UIPickerView()
+    var pickerView4 = UIPickerView()
+    var pickerView5 = UIPickerView()
+    var pickerView6 = UIPickerView()
+    
+    
+    
+    // skill picker text fields
+    @IBOutlet weak var skillPicker1: UITextField!
+    
+    @IBOutlet weak var skillPicker2: UITextField!
+    
+    @IBOutlet weak var skillPicker3: UITextField!
+    
+    @IBOutlet weak var skillPicker4: UITextField!
+    
+    @IBOutlet weak var skillPicker5: UITextField!
+    
+    @IBOutlet weak var skillPicker6: UITextField!
+    
     // picker data for test
-    let pickerData = ["Mozzarella","Gorgonzola","Provolone","Brie","Maytag Blue","Sharp Cheddar","Monterrey Jack","Stilton","Gouda","Goat Cheese", "Asiago"]
+    let pickerData = ["skill1","skill2","skill3","skill4","skill5","skill6","skill7","Skill8","skill9","skill10", "skill11"]
     
     // MARK: UITextFieldDelegate
     /*
@@ -48,13 +65,49 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // To set ViewController as the delegate for nameText
         // Handle the text field’s user input through delegate callbacks.
         textInput.delegate = self
-        skillPicker.dataSource = self
-        skillPicker.delegate = self
-        pickerTextField.inputView = skillPicker;
-        skillPicker.showsSelectionIndicator = true
+        pickerView1.dataSource = self
+        pickerView1.delegate = self
+        
+        pickerView2.dataSource = self
+        pickerView2.delegate = self
+        
+        pickerView3.dataSource = self
+        pickerView3.delegate = self
+        
+        pickerView4.dataSource = self
+        pickerView4.delegate = self
+        
+        pickerView5.dataSource = self
+        pickerView5.delegate = self
+        
+        pickerView6.dataSource = self
+        pickerView6.delegate = self
+        
+        skillPicker1.inputView = pickerView1;
+        skillPicker2.inputView = pickerView2;
+        skillPicker3.inputView = pickerView3;
+        skillPicker4.inputView = pickerView4;
+        skillPicker5.inputView = pickerView5;
+        skillPicker6.inputView = pickerView6;
+        
+        
+        pickerView1.showsSelectionIndicator = true
+        pickerView2.showsSelectionIndicator = true
+        pickerView3.showsSelectionIndicator = true
+        pickerView4.showsSelectionIndicator = true
+        pickerView5.showsSelectionIndicator = true
+        pickerView6.showsSelectionIndicator = true
+        
+        pickerView1.tag = 1
+        pickerView2.tag = 2
+        pickerView3.tag = 3
+        pickerView4.tag = 4
+        pickerView5.tag = 5
+        pickerView6.tag = 6
         
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ViewController.dismissInput))
@@ -85,7 +138,24 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     // set text to the picker text
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerTextField.text = pickerData[row]
+        if pickerView.tag == 1 {
+            skillPicker1.text = pickerData[row]
+        }
+        else if pickerView.tag == 2 {
+            skillPicker2.text = pickerData[row]
+        }
+        else if pickerView.tag == 3 {
+            skillPicker3.text = pickerData[row]
+        }
+        else if pickerView.tag == 4 {
+            skillPicker4.text = pickerData[row]
+        }
+        else if pickerView.tag == 5 {
+            skillPicker5.text = pickerData[row]
+        }
+        else if pickerView.tag == 6 {
+            skillPicker6.text = pickerData[row]
+        }
         //self.view.endEditing(false)
         pickerView.isHidden = false
     }

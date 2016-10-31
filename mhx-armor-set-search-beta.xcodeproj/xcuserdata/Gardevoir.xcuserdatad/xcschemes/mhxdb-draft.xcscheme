@@ -17,7 +17,7 @@
                BlueprintIdentifier = "7BF2A6301DBAD4370009C103"
                BuildableName = "mhxdb-draft.app"
                BlueprintName = "mhxdb-draft"
-               ReferencedContainer = "container:mhxdb-draft.xcodeproj">
+               ReferencedContainer = "container:mhx-armor-set-search-beta.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "7BF2A6441DBAD4380009C103"
                BuildableName = "mhxdb-draftTests.xctest"
                BlueprintName = "mhxdb-draftTests"
-               ReferencedContainer = "container:mhxdb-draft.xcodeproj">
+               ReferencedContainer = "container:mhx-armor-set-search-beta.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "7BF2A6301DBAD4370009C103"
             BuildableName = "mhxdb-draft.app"
             BlueprintName = "mhxdb-draft"
-            ReferencedContainer = "container:mhxdb-draft.xcodeproj">
+            ReferencedContainer = "container:mhx-armor-set-search-beta.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -68,7 +68,7 @@
             BlueprintIdentifier = "7BF2A6301DBAD4370009C103"
             BuildableName = "mhxdb-draft.app"
             BlueprintName = "mhxdb-draft"
-            ReferencedContainer = "container:mhxdb-draft.xcodeproj">
+            ReferencedContainer = "container:mhx-armor-set-search-beta.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -87,7 +87,7 @@
             BlueprintIdentifier = "7BF2A6301DBAD4370009C103"
             BuildableName = "mhxdb-draft.app"
             BlueprintName = "mhxdb-draft"
-            ReferencedContainer = "container:mhxdb-draft.xcodeproj">
+            ReferencedContainer = "container:mhx-armor-set-search-beta.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -19,52 +19,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tAr-3q-p47">
-                                <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLT-Wq-73g">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="bCT-7H-Q0e"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="id here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-YX-zv4">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="ShW-3B-8Yb"/>
-                                        </constraints>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-kr-xhQ">
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="plu-z3-XCR"/>
-                                        </constraints>
-                                        <state key="normal" title="look it up"/>
-                                        <connections>
-                                            <segue destination="nFQ-8z-Ptf" kind="show" identifier="LookItUp" id="MVa-lx-htC"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cLT-Wq-73g" userLabel="Skill Picker Field 1">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QtN-Zq-oR7"/>
+                                    <constraint firstAttribute="width" constant="343" id="XgV-uU-buW"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-eW-5lF" userLabel="Skill Picker Field 2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="92G-Xf-AfH"/>
+                                    <constraint firstAttribute="width" constant="343" id="usD-RW-r0c"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wzm-j0-Qgk" userLabel="Skill Picker Field 3">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="bFv-Ed-tEK"/>
+                                    <constraint firstAttribute="height" constant="40" id="dQR-5h-LWH"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTF-Na-AEA" userLabel="Skill Picker Field 4">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="23u-3A-A9A"/>
+                                    <constraint firstAttribute="height" constant="40" id="ueV-sV-Hj9"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2cr-B9-EHc" userLabel="Skill Picker Field 5">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Q7u-iD-chH"/>
+                                    <constraint firstAttribute="width" constant="343" id="esr-Kf-lM0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uRk-Ic-GH4" userLabel="Skill Picker Field 6">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="5kq-S1-AKy"/>
+                                    <constraint firstAttribute="width" constant="343" id="5y1-gj-0DJ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="343" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dto-kr-xhQ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="dkb-F5-Dc5"/>
+                                </constraints>
+                                <state key="normal" title="look it up"/>
+                                <connections>
+                                    <segue destination="nFQ-8z-Ptf" kind="show" identifier="LookItUp" id="MVa-lx-htC"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="353" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="id here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VKW-YX-zv4">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="bH9-ub-Nwn"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="tAr-3q-p47" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Dnd-us-gXI"/>
-                            <constraint firstItem="tAr-3q-p47" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="jp8-Pb-hHj"/>
-                            <constraint firstItem="tAr-3q-p47" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="49" id="vuy-jS-khC"/>
+                            <constraint firstItem="cLT-Wq-73g" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2qk-Lc-kcv"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dto-kr-xhQ" secondAttribute="bottom" constant="55" id="7Wd-xe-zhH"/>
+                            <constraint firstItem="eTF-Na-AEA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9To-3g-2z0"/>
+                            <constraint firstItem="vuN-eW-5lF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ELl-fv-rZJ"/>
+                            <constraint firstItem="2cr-B9-EHc" firstAttribute="top" secondItem="eTF-Na-AEA" secondAttribute="bottom" constant="20" id="Ebt-r2-h8G"/>
+                            <constraint firstItem="2cr-B9-EHc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G95-vP-QZh"/>
+                            <constraint firstItem="dto-kr-xhQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IH8-3v-Gkg"/>
+                            <constraint firstItem="VKW-YX-zv4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="RGf-pJ-jaj"/>
+                            <constraint firstItem="Wzm-j0-Qgk" firstAttribute="top" secondItem="vuN-eW-5lF" secondAttribute="bottom" constant="20" id="SOM-C9-HUl"/>
+                            <constraint firstItem="cLT-Wq-73g" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="51" id="TYK-si-kJE"/>
+                            <constraint firstItem="vuN-eW-5lF" firstAttribute="top" secondItem="cLT-Wq-73g" secondAttribute="bottom" constant="20" id="Xc4-bX-Ed4"/>
+                            <constraint firstItem="Wzm-j0-Qgk" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cuF-EI-dhj"/>
+                            <constraint firstItem="uRk-Ic-GH4" firstAttribute="top" secondItem="2cr-B9-EHc" secondAttribute="bottom" constant="20" id="eyh-dX-abz"/>
+                            <constraint firstItem="uRk-Ic-GH4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hhK-FS-GfO"/>
+                            <constraint firstItem="eTF-Na-AEA" firstAttribute="top" secondItem="Wzm-j0-Qgk" secondAttribute="bottom" constant="20" id="otm-v1-krb"/>
+                            <constraint firstItem="VKW-YX-zv4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pmH-Ra-2Ru"/>
+                            <constraint firstItem="VKW-YX-zv4" firstAttribute="top" secondItem="uRk-Ic-GH4" secondAttribute="bottom" constant="53" id="qtC-dP-Wmw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VKW-YX-zv4" secondAttribute="trailing" id="w7u-xY-Y4X"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="Trf-qo-Cor"/>
                     <connections>
-                        <outlet property="pickerTextField" destination="cLT-Wq-73g" id="yyh-p7-CHM"/>
+                        <outlet property="skillPicker1" destination="cLT-Wq-73g" id="fyU-Ob-zOc"/>
+                        <outlet property="skillPicker2" destination="vuN-eW-5lF" id="95p-2Q-zta"/>
+                        <outlet property="skillPicker3" destination="Wzm-j0-Qgk" id="ObJ-OR-GJG"/>
+                        <outlet property="skillPicker4" destination="eTF-Na-AEA" id="GfD-wy-Scj"/>
+                        <outlet property="skillPicker5" destination="2cr-B9-EHc" id="N9a-fa-ynt"/>
+                        <outlet property="skillPicker6" destination="uRk-Ic-GH4" id="jIj-Z7-dTm"/>
                         <outlet property="textInput" destination="VKW-YX-zv4" id="fbF-84-4o3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-62" y="-179"/>
+            <point key="canvasLocation" x="-63" y="-179"/>
         </scene>
         <!--Results-->
         <scene sceneID="ktl-Uo-pMI">
