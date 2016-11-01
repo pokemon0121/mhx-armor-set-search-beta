@@ -54,7 +54,7 @@
 		7BF2A6451DBAD4380009C103 /* mhxdb-draftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mhxdb-draftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF2A6491DBAD4380009C103 /* mhxdb_draftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mhxdb_draftTests.swift; sourceTree = "<group>"; };
 		7BF2A64B1DBAD4380009C103 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7BF2A69E1DBFD0150009C103 /* mhxdb-draft-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mhxdb-draft-Bridging-Header.h"; sourceTree = "<group>"; };
+		7BF2A69E1DBFD0150009C103 /* mhx-armor-set-search-beta-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "mhx-armor-set-search-beta-Bridging-Header.h"; sourceTree = "<group>"; };
 		7BF2A69F1DBFD0150009C103 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
 		7BF2A6A01DBFD0150009C103 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
 		7BF2A6A11DBFD0150009C103 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				7BF2A63B1DBAD4370009C103 /* Assets.xcassets */,
 				7BF2A63D1DBAD4370009C103 /* LaunchScreen.storyboard */,
 				7BF2A6401DBAD4370009C103 /* Info.plist */,
-				7BF2A69E1DBFD0150009C103 /* mhxdb-draft-Bridging-Header.h */,
+				7BF2A69E1DBFD0150009C103 /* mhx-armor-set-search-beta-Bridging-Header.h */,
 				7BCBDAFC1DC27110000A2D6E /* SearchResultTableViewCell.swift */,
 				7BCBDB001DC292BA000A2D6E /* Result.swift */,
 				7B3B45E21DC7158B001330DF /* SkillPickerView.swift */,
@@ -413,11 +413,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/mhxdb-draft",
+					"$(PROJECT_DIR)/mhx-armor-set-search-beta",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhx-armor-set-search-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "mhx-armor-set-search-beta/mhx-armor-set-search-beta-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
@@ -432,11 +432,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/mhxdb-draft",
+					"$(PROJECT_DIR)/mhx-armor-set-search-beta",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.delphox.mhx-armor-set-search-beta";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "mhxdb-draft/mhxdb-draft-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "mhx-armor-set-search-beta/mhx-armor-set-search-beta-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
