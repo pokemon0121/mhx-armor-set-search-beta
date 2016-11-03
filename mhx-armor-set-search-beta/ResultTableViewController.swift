@@ -7,23 +7,21 @@
 //
 
 
-// MARK: Properties
-// a list for all returning search results
-var searchResults = [Result]()
+
 
 
 import UIKit
 
 class ResultTableViewController: UITableViewController {
-
-    var databasePath = NSString()
     
-    var searchContentViaSegue = String()
+    // MARK: Properties
+
+    // skill names passed to this view controller
+    var searchContentViaSegue = [String]()
     
     override func viewDidLoad() {
-        searchResults.removeAll()
         super.viewDidLoad()
-        NSLog("Entered viewDidLoad method in ResultTableViewController!!!!!!!!")
+        NSLog("Entered viewDidLoad method in ResultTableViewController")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -31,45 +29,10 @@ class ResultTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let mhxDB = appDelegate.mhxDB
         
-        // query here
-        let querySQL = "select distinct skill_name from skill where skill_point_name = '" + searchContentViaSegue + "'"
-        NSLog("Query: \(querySQL)")
-        NSLog("searchContentViaSegue: \(searchContentViaSegue)")
-        let results:FMResultSet? = mhxDB?.executeQuery(querySQL, withArgumentsIn: nil)
-        NSLog("FMResultSet.columnCount: \(results?.columnCount())")
-        if results != nil {
-            while (results?.next())! {
-                searchResults.append(Result(name: "スキル", value: (results?.string(forColumn: "skill_name"))!))
-                /*
-                searchResults.append(Result(name: "スキル", value: (results?.string(forColumn: "skill_name"))!))
-                searchResults.append(Result(name: "スキル系統", value: (results?.string(forColumn: "skill_point_name"))!))
-                searchResults.append(Result(name: "ポイント", value: (results?.string(forColumn: "point"))!))
-                searchResults.append(Result(name: "タイプ", value: getType(type: (results?.string(forColumn: "type"))!)))
-                */
-            }
-        } else {
-            NSLog("NORESULTS: \(mhxDB?.lastErrorMessage())")
-        }
-        NSLog("size of searchResults: \(searchResults.count)")
+        NSLog("size of searchContentViaSegue: \(searchContentViaSegue.count)")
     }
 
-    func getType(type: String) -> String {
-        if type == "0" {
-            return "両方";
-        }
-        else if type == "1" {
-            return "剣士"
-        }
-        else if type == "2" {
-            return "ガンナー"
-        }
-        else {
-            return "Unknown"
-        }
-    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,7 +46,7 @@ class ResultTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResults.count
+        return searchContentViaSegue.count
     }
 
     
@@ -94,9 +57,8 @@ class ResultTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! SearchResultTableViewCell
 
         // load data into cell
-        let result = searchResults[indexPath.row]
-        cell.columnNameLabel.text = result.name
-        cell.columnValueLabel.text = result.value
+        cell.columnNameLabel.text = ""
+        cell.columnValueLabel.text = searchContentViaSegue[indexPath.row]
         
 
         return cell
@@ -105,7 +67,7 @@ class ResultTableViewController: UITableViewController {
     // section title
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String{
         if (section == 0){
-            return "Searched for " + searchContentViaSegue
+            return "Display section"
         }
         else {
             return "Unknown section"

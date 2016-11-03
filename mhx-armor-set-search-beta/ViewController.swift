@@ -16,9 +16,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
 
     // MARK: properties
-
-    // text input
-    @IBOutlet weak var textInput: UITextField!
     
     // the picker views for text fields
     var pickerView1 = UIPickerView()
@@ -43,8 +40,8 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     
     @IBOutlet weak var skillPicker6: UITextField!
     
-    // picker data for test
-    let pickerData = ["skill1","skill2","skill3","skill4","skill5","skill6","skill7","Skill8","skill9","skill10", "skill11"]
+    // picker data for test, which is the skills
+    var pickerData = [String]()
     
     // MARK: UITextFieldDelegate
     /*
@@ -60,15 +57,31 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     // MARK: action
     // search and show result page
     @IBAction func performSearch(_ sender: UIButton) {
+        NSLog("perform search")
         performSegue(withIdentifier: "LookItUp", sender: sender)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // To set ViewController as the delegate for nameText
-        // Handle the text field’s user input through delegate callbacks.
-        textInput.delegate = self
+        NSLog("viewDidLoad: set up all delegates, data sources, get skill list from database")
+        
+        // get databse handle
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mhxDB = appDelegate.mhxDB
+        // get skill list
+        let skills:FMResultSet? = mhxDB?.executeQuery("select skill_name from skill where point > '0'", withArgumentsIn: nil)
+        // fill pickerData
+        if skills != nil {
+            while (skills?.next())! {
+                pickerData.append((skills?.string(forColumn: "skill_name"))!)
+            }
+        } else {
+            NSLog("Maybe databse is empty. No results. There should be results for this query. \(mhxDB?.lastErrorMessage())")
+            NSLog("app exit.")
+            exit(1)
+        }
+
         pickerView1.dataSource = self
         pickerView1.delegate = self
         
@@ -163,12 +176,37 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDelegat
     // send the user input to next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "LookItUp" {
-            NSLog("Identifier = LookItUp, segue is ready, textInput: " + textInput.text!)
+            NSLog("Identifier == LookItUp, segue is ready, will pass all values in 6 pickers. They are:")
+            NSLog("1: " + skillPicker1.text!)
+            NSLog("2: " + skillPicker2.text!)
+            NSLog("3: " + skillPicker3.text!)
+            NSLog("4: " + skillPicker4.text!)
+            NSLog("5: " + skillPicker5.text!)
+            NSLog("6: " + skillPicker6.text!)
             if let destination = segue.destination as? ResultTableViewController {
-                destination.searchContentViaSegue = textInput.text!
+                if skillPicker1.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker1.text!)
+                }
+                if skillPicker2.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker2.text!)
+                }
+                if skillPicker3.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker3.text!)
+                }
+                if skillPicker4.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker4.text!)
+                }
+                if skillPicker5.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker5.text!)
+                }
+                if skillPicker6.text! != "" {
+                    destination.searchContentViaSegue.append(skillPicker6.text!)
+                }
             }
         }
-        NSLog("Identifier not set up correctly. textInput: " + textInput.text!)
+        else {
+            NSLog("Identifier not set up correctly.")
+        }
     }
 
 }
